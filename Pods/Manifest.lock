@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.6.0)
+  - InputMask (2.2.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.6)
+  - InputMask
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  InputMask: 756ffc515121d07a9c81a605fa5c44e5ac5bde13
+
+PODFILE CHECKSUM: 11dccde2d584f9ee6b448f7e8f8f6a9537a3893d
+
+COCOAPODS: 1.4.0

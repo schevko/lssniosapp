@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8E123F2046B43E00ED42F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E123E2046B43E00ED42F7 /* AppDelegate.swift */; };
 		0A8E12412046B43E00ED42F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E12402046B43E00ED42F7 /* ViewController.swift */; };
 		0A8E12442046B43E00ED42F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E12422046B43E00ED42F7 /* Main.storyboard */; };
 		0A8E12462046B43E00ED42F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E12452046B43E00ED42F7 /* Assets.xcassets */; };
 		0A8E12492046B43E00ED42F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E12472046B43E00ED42F7 /* LaunchScreen.storyboard */; };
 		0A8E12542046B43E00ED42F7 /* LissenMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E12532046B43E00ED42F7 /* LissenMeTests.swift */; };
 		0A8E125F2046B43E00ED42F7 /* LissenMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E125E2046B43E00ED42F7 /* LissenMeUITests.swift */; };
+		0A8E126D2046C40E00ED42F7 /* lissen_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E126C2046C40E00ED42F7 /* lissen_logo.png */; };
+		0A8E126F2046DF6900ED42F7 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E126E2046DF6900ED42F7 /* QRViewController.swift */; };
+		0A8E12702046F31400ED42F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E123E2046B43E00ED42F7 /* AppDelegate.swift */; };
+		0AB163B82048130800F8D4D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB163B72048130800F8D4D7 /* RegisterViewController.swift */; };
+		0ADCF41820492F6D005F7016 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADCF41720492F6D005F7016 /* LoginViewController.swift */; };
+		660E73B34D219DD96B1C118A /* Pods_LissenMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101E882D752FE38FAEB0F736 /* Pods_LissenMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,13 @@
 		0A8E125A2046B43E00ED42F7 /* LissenMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LissenMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8E125E2046B43E00ED42F7 /* LissenMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LissenMeUITests.swift; sourceTree = "<group>"; };
 		0A8E12602046B43E00ED42F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A8E126C2046C40E00ED42F7 /* lissen_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lissen_logo.png; sourceTree = "<group>"; };
+		0A8E126E2046DF6900ED42F7 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		0AB163B72048130800F8D4D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0ADCF41720492F6D005F7016 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0F43A7428137A4465B3507FE /* Pods-LissenMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LissenMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe.release.xcconfig"; sourceTree = "<group>"; };
+		101E882D752FE38FAEB0F736 /* Pods_LissenMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LissenMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDFB7FE6F4EFA5BD8A2A7F1C /* Pods-LissenMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LissenMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660E73B34D219DD96B1C118A /* Pods_LissenMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05000E3E4831BE6BF1ACFDB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				101E882D752FE38FAEB0F736 /* Pods_LissenMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0A8E12322046B43E00ED42F7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +102,8 @@
 				0A8E12522046B43E00ED42F7 /* LissenMeTests */,
 				0A8E125D2046B43E00ED42F7 /* LissenMeUITests */,
 				0A8E123C2046B43E00ED42F7 /* Products */,
+				90BB8B00B36086E16883A41B /* Pods */,
+				05000E3E4831BE6BF1ACFDB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +120,16 @@
 		0A8E123D2046B43E00ED42F7 /* LissenMe */ = {
 			isa = PBXGroup;
 			children = (
+				0A8E126C2046C40E00ED42F7 /* lissen_logo.png */,
 				0A8E123E2046B43E00ED42F7 /* AppDelegate.swift */,
 				0A8E12402046B43E00ED42F7 /* ViewController.swift */,
 				0A8E12422046B43E00ED42F7 /* Main.storyboard */,
 				0A8E12452046B43E00ED42F7 /* Assets.xcassets */,
 				0A8E12472046B43E00ED42F7 /* LaunchScreen.storyboard */,
 				0A8E124A2046B43E00ED42F7 /* Info.plist */,
+				0A8E126E2046DF6900ED42F7 /* QRViewController.swift */,
+				0AB163B72048130800F8D4D7 /* RegisterViewController.swift */,
+				0ADCF41720492F6D005F7016 /* LoginViewController.swift */,
 			);
 			path = LissenMe;
 			sourceTree = "<group>";
@@ -125,6 +152,15 @@
 			path = LissenMeUITests;
 			sourceTree = "<group>";
 		};
+		90BB8B00B36086E16883A41B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDFB7FE6F4EFA5BD8A2A7F1C /* Pods-LissenMe.debug.xcconfig */,
+				0F43A7428137A4465B3507FE /* Pods-LissenMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A8E12632046B43F00ED42F7 /* Build configuration list for PBXNativeTarget "LissenMe" */;
 			buildPhases = (
+				107141705D8AF2679F83F497 /* [CP] Check Pods Manifest.lock */,
 				0A8E12372046B43E00ED42F7 /* Sources */,
 				0A8E12382046B43E00ED42F7 /* Frameworks */,
 				0A8E12392046B43E00ED42F7 /* Resources */,
+				AED4D92A31322ABAF429B495 /* [CP] Embed Pods Frameworks */,
+				50028962C15EB41B71C2B624 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8E126D2046C40E00ED42F7 /* lissen_logo.png in Resources */,
 				0A8E12492046B43E00ED42F7 /* LaunchScreen.storyboard in Resources */,
 				0A8E12462046B43E00ED42F7 /* Assets.xcassets in Resources */,
 				0A8E12442046B43E00ED42F7 /* Main.storyboard in Resources */,
@@ -254,13 +294,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		107141705D8AF2679F83F497 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LissenMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50028962C15EB41B71C2B624 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AED4D92A31322ABAF429B495 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A8E12372046B43E00ED42F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8E12702046F31400ED42F7 /* AppDelegate.swift in Sources */,
 				0A8E12412046B43E00ED42F7 /* ViewController.swift in Sources */,
-				0A8E123F2046B43E00ED42F7 /* AppDelegate.swift in Sources */,
+				0A8E126F2046DF6900ED42F7 /* QRViewController.swift in Sources */,
+				0ADCF41820492F6D005F7016 /* LoginViewController.swift in Sources */,
+				0AB163B82048130800F8D4D7 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,29 +523,39 @@
 		};
 		0A8E12642046B43F00ED42F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDFB7FE6F4EFA5BD8A2A7F1C /* Pods-LissenMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RZTLA7RQ6K;
 				INFOPLIST_FILE = LissenMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeetwork.LissenMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0A8E12652046B43F00ED42F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F43A7428137A4465B3507FE /* Pods-LissenMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RZTLA7RQ6K;
 				INFOPLIST_FILE = LissenMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeetwork.LissenMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
