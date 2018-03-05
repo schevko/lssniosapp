@@ -16,6 +16,9 @@
 		0A8E126D2046C40E00ED42F7 /* lissen_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E126C2046C40E00ED42F7 /* lissen_logo.png */; };
 		0A8E126F2046DF6900ED42F7 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E126E2046DF6900ED42F7 /* QRViewController.swift */; };
 		0A8E12702046F31400ED42F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E123E2046B43E00ED42F7 /* AppDelegate.swift */; };
+		0A9F0323204D7FA800998112 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F0322204D7FA800998112 /* GuideViewController.swift */; };
+		0A9F0325204DF4B100998112 /* UserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F0324204DF4B100998112 /* UserGuideViewController.swift */; };
+		0A9F0328204DF75300998112 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F0327204DF75300998112 /* WelcomeViewController.swift */; };
 		0AB163B82048130800F8D4D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB163B72048130800F8D4D7 /* RegisterViewController.swift */; };
 		0ADCF41820492F6D005F7016 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADCF41720492F6D005F7016 /* LoginViewController.swift */; };
 		660E73B34D219DD96B1C118A /* Pods_LissenMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101E882D752FE38FAEB0F736 /* Pods_LissenMe.framework */; };
@@ -54,6 +57,9 @@
 		0A8E12602046B43E00ED42F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8E126C2046C40E00ED42F7 /* lissen_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lissen_logo.png; sourceTree = "<group>"; };
 		0A8E126E2046DF6900ED42F7 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		0A9F0322204D7FA800998112 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		0A9F0324204DF4B100998112 /* UserGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideViewController.swift; sourceTree = "<group>"; };
+		0A9F0327204DF75300998112 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0AB163B72048130800F8D4D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0ADCF41720492F6D005F7016 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F43A7428137A4465B3507FE /* Pods-LissenMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LissenMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-LissenMe/Pods-LissenMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 				0A8E126E2046DF6900ED42F7 /* QRViewController.swift */,
 				0AB163B72048130800F8D4D7 /* RegisterViewController.swift */,
 				0ADCF41720492F6D005F7016 /* LoginViewController.swift */,
+				0A9F0322204D7FA800998112 /* GuideViewController.swift */,
+				0A9F0324204DF4B100998112 /* UserGuideViewController.swift */,
+				0A9F0327204DF75300998112 /* WelcomeViewController.swift */,
 			);
 			path = LissenMe;
 			sourceTree = "<group>";
@@ -356,10 +365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A8E12702046F31400ED42F7 /* AppDelegate.swift in Sources */,
+				0A9F0328204DF75300998112 /* WelcomeViewController.swift in Sources */,
+				0A9F0323204D7FA800998112 /* GuideViewController.swift in Sources */,
 				0A8E12412046B43E00ED42F7 /* ViewController.swift in Sources */,
 				0A8E126F2046DF6900ED42F7 /* QRViewController.swift in Sources */,
 				0ADCF41820492F6D005F7016 /* LoginViewController.swift in Sources */,
 				0AB163B82048130800F8D4D7 /* RegisterViewController.swift in Sources */,
+				0A9F0325204DF4B100998112 /* UserGuideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,22 +8,41 @@
 
 import UIKit
 import AVFoundation
+import QuartzCore
+import Alamofire
 
 class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
+    @IBOutlet weak var ugBtn: UIButton!
+    @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var qr_square: UILabel!
     
     var goUrl = String()
 
     @IBOutlet weak var lissen_logo: UIImageView!
-    @IBOutlet weak var label1: UILabel!
     var video = AVCaptureVideoPreviewLayer()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondController = segue.destination as! ViewController
-        secondController.myUrl = goUrl
+        if segue.identifier == "segue"{
+            let secondController = segue.destination as! ViewController
+            secondController.myUrl = goUrl
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.ugBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        self.ugBtn.layer.borderWidth = CGFloat(Float(1.0))
+        self.ugBtn.layer.borderColor = UIColor(red: 61/255, green: 61/255, blue: 61/255, alpha: 1).cgColor
+        self.ugBtn.layer.backgroundColor = UIColor(red: 61/255, green: 61/255, blue: 61/255, alpha: 1).cgColor
+        
+        self.qr_square.layer.borderWidth = CGFloat(Float(3.0))
+        self.qr_square.layer.borderColor = UIColor.white.cgColor
+        
+        self.alertLabel.layer.opacity = 0.5
+        self.qr_square.layer.opacity = 0.5
+        
         
         // Do any additional setup after loading the view.
         
@@ -53,8 +72,10 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
         
-        self.view.bringSubview(toFront: label1)
+        self.view.bringSubview(toFront: ugBtn)
         self.view.bringSubview(toFront: lissen_logo)
+        self.view.bringSubview(toFront: alertLabel)
+        self.view.bringSubview(toFront: qr_square)
         
         session.startRunning()
     
@@ -76,19 +97,36 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 
                     let customer_name: String = UserDefaults.standard.string(forKey: "customer_name")!
                     
-                    
-                    goUrl = "http://lissen.me?venue_id="+object.stringValue+"&customer_name=\(customer_name)"
-                    
-                    if let encoded = goUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
-                        let url = URL(string: encoded)
+                    var hasVenueUrl = "http://lissen.me/Main/hasVenue?venue_id="+object.stringValue
+                    if let encodedhas = goUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+                        let urlhas = URL(string: encodedhas)
                     {
-                        goUrl = "\(url)"
+                        hasVenueUrl = "\(urlhas)"
                     }
                     
-                    print(goUrl)
+                    Alamofire.request(hasVenueUrl).responseJSON { response in
+                        print("Request: \(String(describing: response.request))")   // original url request
+                        
+                        if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                            if utf8Text == "1"
+                            {
+                                self.goUrl = "http://lissen.me?venue_id="+object.stringValue+"&customer_name=\(customer_name)"
+                                if let encoded = self.goUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+                                    let url = URL(string: encoded)
+                                {
+                                    self.goUrl = "\(url)"
+                                }
+                                print(self.goUrl)
+                                self.performSegue(withIdentifier: "segue", sender: self)
+                            }else{
+                                let alerthas = UIAlertController(title: "Dikkat", message: "Hatalı Barkod Okuttunuz!", preferredStyle: .alert)
+                                alerthas.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+                                self.present(alerthas, animated: true, completion: nil)
+                            }
+                        }
+                    }
                     
-                    //present(alert, animated: true, completion: nil)
-                    performSegue(withIdentifier: "segue", sender: self)
+                    
                 }
             }
         }

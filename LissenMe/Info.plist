@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Kameranı kullanabilir miyim?</string>
+	<string>Mekanın QR Kodunu okutabilmen için telefonunun kamerasını kullanmam gerekiyor.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
