@@ -44,40 +44,81 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.qr_square.layer.opacity = 0.5
         
         
-        // Do any additional setup after loading the view.
         
-        //Session Olşturma
-        let session = AVCaptureSession()
-    
-        //Kamerayı Tanıla
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
-        do
-        {
-            let input = try AVCaptureDeviceInput(device:captureDevice)
-            session.addInput(input)
+        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  AVAuthorizationStatus.authorized {
+            //Session Olşturma
+            let session = AVCaptureSession()
+            //Kamerayı Tanıla
+            let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+            do
+            {
+                let input = try AVCaptureDeviceInput(device:captureDevice)
+                session.addInput(input)
+            }
+            catch
+            {
+                print("ERROR")
+            }
+            let output = AVCaptureMetadataOutput()
+            session.addOutput(output)
+            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            output.metadataObjectTypes = [AVMetadataObjectTypeQRCode  ]
+            self.video = AVCaptureVideoPreviewLayer(session: session)
+            self.video.frame = self.view.layer.bounds
+            self.view.layer.addSublayer(self.video)
+            session.startRunning()
+        } else {
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted: Bool) -> Void in
+                if granted == true {
+                    //Session Olşturma
+                    let session = AVCaptureSession()
+                    //Kamerayı Tanıla
+                    let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+                    do
+                    {
+                        let input = try AVCaptureDeviceInput(device:captureDevice)
+                        session.addInput(input)
+                    }
+                    catch
+                    {
+                        print("ERROR")
+                    }
+                    let output = AVCaptureMetadataOutput()
+                    session.addOutput(output)
+                    output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                    output.metadataObjectTypes = [AVMetadataObjectTypeQRCode  ]
+                    self.video = AVCaptureVideoPreviewLayer(session: session)
+                    self.video.frame = self.view.layer.bounds
+                    self.view.layer.addSublayer(self.video)
+                    session.startRunning()
+                } else {
+                    let alert = UIAlertController(title: "Dikkat", message: "Mekanın QR Kodunu okutabilmen için telefonunun kamerasını kullanmam gerekiyor.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ayarlar", style: .default, handler: { (_) in
+                        DispatchQueue.main.async {
+                            if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
+                                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                            }
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    return
+                }
+            })
         }
-        catch
-        {
-            print("ERROR")
-        }
         
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
         
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode  ]
         
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
+        
         
         self.view.bringSubview(toFront: ugBtn)
         self.view.bringSubview(toFront: lissen_logo)
         self.view.bringSubview(toFront: alertLabel)
         self.view.bringSubview(toFront: qr_square)
         
-        session.startRunning()
+        
     
     }
     
@@ -125,10 +166,9 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                             }
                         }
                     }
-                    
-                    
+                
                 }
-            }
+            }//end if
         }
     }
 
